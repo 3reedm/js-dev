@@ -1,0 +1,4955 @@
+<!doctype html>
+<html>
+	<head>
+		<title>rectExample</title>
+		<meta charset='utf-8' />
+	</head>
+	<body>
+		<!--<canvas id='example'>Обновите браузер</canvas>-->
+        <div id="chartContainer">
+          <script src="d3.js"></script>
+          <script src="dimple.v2.3.0.js"></script>
+          <script type="text/javascript">
+            var svg = dimple.newSvg("#chartContainer", "1000px", "1000px");
+
+            //  d3.json("columndata.json", function (data) {
+            var load_data = [{
+            "source_id": 140506423403072,
+            "timestamp": 1530772354,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 1,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.281,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783943,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.281,
+            "50.0": 1.281,
+            "90.0": 1.281,
+            "95.0": 1.281,
+            "99.0": 1.281,
+            "99.9": 1.281,
+            "100.0": 1.281
+            }
+            },
+            "cumulative": {
+            "sample_count": 1,
+            "concurrency": 1,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.281,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783943,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.281,
+            "50.0": 1.281,
+            "90.0": 1.281,
+            "95.0": 1.281,
+            "99.0": 1.281,
+            "99.9": 1.281,
+            "100.0": 1.281
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772357,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 1,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.326,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783908,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.326,
+            "50.0": 1.326,
+            "90.0": 1.326,
+            "95.0": 1.326,
+            "99.0": 1.326,
+            "99.9": 1.326,
+            "100.0": 1.326
+            }
+            },
+            "cumulative": {
+            "sample_count": 3,
+            "concurrency": 1,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.3503333333333334,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351798,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.281,
+            "50.0": 1.326,
+            "90.0": 1.444,
+            "95.0": 1.444,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772359,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 1,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.061,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783908,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.061,
+            "50.0": 1.061,
+            "90.0": 1.061,
+            "95.0": 1.061,
+            "99.0": 1.061,
+            "99.9": 1.061,
+            "100.0": 1.061
+            }
+            },
+            "cumulative": {
+            "sample_count": 4,
+            "concurrency": 1,
+            "successes": 4,
+            "failures": 0,
+            "avg_resp_time": 1.278,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 3135706,
+            "errors": [],
+            "resp_codes": {
+            "200": 4
+            },
+            "percentiles": {
+            "0.0": 1.061,
+            "50.0": 1.281,
+            "90.0": 1.444,
+            "95.0": 1.444,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772361,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 1,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.092,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783898,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.092,
+            "50.0": 1.092,
+            "90.0": 1.092,
+            "95.0": 1.092,
+            "99.0": 1.092,
+            "99.9": 1.092,
+            "100.0": 1.092
+            }
+            },
+            "cumulative": {
+            "sample_count": 6,
+            "concurrency": 1,
+            "successes": 6,
+            "failures": 0,
+            "avg_resp_time": 1.2510000000000001,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 4703545,
+            "errors": [],
+            "resp_codes": {
+            "200": 6
+            },
+            "percentiles": {
+            "0.0": 1.061,
+            "50.0": 1.281,
+            "90.0": 1.326,
+            "95.0": 1.444,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772362,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 1,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 0.988,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783929,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 0.988,
+            "50.0": 0.988,
+            "90.0": 0.988,
+            "95.0": 0.988,
+            "99.0": 0.988,
+            "99.9": 0.988,
+            "100.0": 0.988
+            }
+            },
+            "cumulative": {
+            "sample_count": 7,
+            "concurrency": 1,
+            "successes": 7,
+            "failures": 0,
+            "avg_resp_time": 1.2134285714285713,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 5487474,
+            "errors": [],
+            "resp_codes": {
+            "200": 7
+            },
+            "percentiles": {
+            "0.0": 0.988,
+            "50.0": 1.281,
+            "90.0": 1.326,
+            "95.0": 1.444,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772364,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 1,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.012,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783930,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.012,
+            "50.0": 1.012,
+            "90.0": 1.012,
+            "95.0": 1.012,
+            "99.0": 1.012,
+            "99.9": 1.012,
+            "100.0": 1.012
+            }
+            },
+            "cumulative": {
+            "sample_count": 9,
+            "concurrency": 1,
+            "successes": 9,
+            "failures": 0,
+            "avg_resp_time": 1.1595555555555555,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 7055344,
+            "errors": [],
+            "resp_codes": {
+            "200": 9
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.092,
+            "90.0": 1.326,
+            "95.0": 1.444,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772366,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 2,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.139,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783899,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.139,
+            "50.0": 1.139,
+            "90.0": 1.139,
+            "95.0": 1.139,
+            "99.0": 1.139,
+            "99.9": 1.139,
+            "100.0": 1.139
+            }
+            },
+            "cumulative": {
+            "sample_count": 10,
+            "concurrency": 2,
+            "successes": 10,
+            "failures": 0,
+            "avg_resp_time": 1.1575,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 7839243,
+            "errors": [],
+            "resp_codes": {
+            "200": 10
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.092,
+            "90.0": 1.326,
+            "95.0": 1.444,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772367,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 2,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.342,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783913,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.342,
+            "50.0": 1.342,
+            "90.0": 1.342,
+            "95.0": 1.342,
+            "99.0": 1.342,
+            "99.9": 1.342,
+            "100.0": 1.342
+            }
+            },
+            "cumulative": {
+            "sample_count": 11,
+            "concurrency": 2,
+            "successes": 11,
+            "failures": 0,
+            "avg_resp_time": 1.1742727272727274,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 8623156,
+            "errors": [],
+            "resp_codes": {
+            "200": 11
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.139,
+            "90.0": 1.342,
+            "95.0": 1.342,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772369,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 2,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.072,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783942,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.072,
+            "50.0": 1.072,
+            "90.0": 1.072,
+            "95.0": 1.072,
+            "99.0": 1.072,
+            "99.9": 1.072,
+            "100.0": 1.072
+            }
+            },
+            "cumulative": {
+            "sample_count": 13,
+            "concurrency": 2,
+            "successes": 13,
+            "failures": 0,
+            "avg_resp_time": 1.153,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 10191038,
+            "errors": [],
+            "resp_codes": {
+            "200": 13
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.092,
+            "90.0": 1.342,
+            "95.0": 1.342,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772371,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 2,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.225,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783892,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.225,
+            "50.0": 1.225,
+            "90.0": 1.225,
+            "95.0": 1.225,
+            "99.0": 1.225,
+            "99.9": 1.225,
+            "100.0": 1.225
+            }
+            },
+            "cumulative": {
+            "sample_count": 14,
+            "concurrency": 2,
+            "successes": 14,
+            "failures": 0,
+            "avg_resp_time": 1.1581428571428574,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 10974930,
+            "errors": [],
+            "resp_codes": {
+            "200": 14
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.092,
+            "90.0": 1.342,
+            "95.0": 1.342,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772372,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 2,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.016,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783920,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.016,
+            "50.0": 1.016,
+            "90.0": 1.016,
+            "95.0": 1.016,
+            "99.0": 1.016,
+            "99.9": 1.016,
+            "100.0": 1.016
+            }
+            },
+            "cumulative": {
+            "sample_count": 15,
+            "concurrency": 2,
+            "successes": 15,
+            "failures": 0,
+            "avg_resp_time": 1.148666666666667,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 11758850,
+            "errors": [],
+            "resp_codes": {
+            "200": 15
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.092,
+            "90.0": 1.342,
+            "95.0": 1.342,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772373,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 2,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.187,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783923,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.187,
+            "50.0": 1.187,
+            "90.0": 1.187,
+            "95.0": 1.187,
+            "99.0": 1.187,
+            "99.9": 1.187,
+            "100.0": 1.187
+            }
+            },
+            "cumulative": {
+            "sample_count": 16,
+            "concurrency": 2,
+            "successes": 16,
+            "failures": 0,
+            "avg_resp_time": 1.1510625000000003,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 12542773,
+            "errors": [],
+            "resp_codes": {
+            "200": 16
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.092,
+            "90.0": 1.326,
+            "95.0": 1.342,
+            "99.0": 1.444,
+            "99.9": 1.444,
+            "100.0": 1.444
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772374,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 2,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 8.44,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 782154,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 8.44,
+            "50.0": 8.447,
+            "90.0": 8.447,
+            "95.0": 8.447,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            }
+            },
+            "cumulative": {
+            "sample_count": 17,
+            "concurrency": 2,
+            "successes": 17,
+            "failures": 0,
+            "avg_resp_time": 1.579823529411765,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 13324927,
+            "errors": [],
+            "resp_codes": {
+            "200": 17
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.139,
+            "90.0": 1.342,
+            "95.0": 1.444,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772375,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 2,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.2945,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567333,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.209,
+            "50.0": 1.209,
+            "90.0": 1.38,
+            "95.0": 1.38,
+            "99.0": 1.38,
+            "99.9": 1.38,
+            "100.0": 1.38
+            }
+            },
+            "cumulative": {
+            "sample_count": 19,
+            "concurrency": 2,
+            "successes": 19,
+            "failures": 0,
+            "avg_resp_time": 1.5497894736842108,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 14892260,
+            "errors": [],
+            "resp_codes": {
+            "200": 19
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.187,
+            "90.0": 1.38,
+            "95.0": 1.444,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772376,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 2,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.1535,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567280,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.126,
+            "50.0": 1.126,
+            "90.0": 1.181,
+            "95.0": 1.181,
+            "99.0": 1.181,
+            "99.9": 1.181,
+            "100.0": 1.181
+            }
+            },
+            "cumulative": {
+            "sample_count": 21,
+            "concurrency": 2,
+            "successes": 21,
+            "failures": 0,
+            "avg_resp_time": 1.5120476190476193,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 16459540,
+            "errors": [],
+            "resp_codes": {
+            "200": 21
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.38,
+            "95.0": 1.444,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772378,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 3,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.167,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567257,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.149,
+            "50.0": 1.149,
+            "90.0": 1.185,
+            "95.0": 1.185,
+            "99.0": 1.185,
+            "99.9": 1.185,
+            "100.0": 1.185
+            }
+            },
+            "cumulative": {
+            "sample_count": 24,
+            "concurrency": 3,
+            "successes": 24,
+            "failures": 0,
+            "avg_resp_time": 1.464291666666667,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 18810726,
+            "errors": [],
+            "resp_codes": {
+            "200": 24
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.149,
+            "90.0": 1.38,
+            "95.0": 1.444,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772379,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 3,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.318,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783349,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.318,
+            "50.0": 1.318,
+            "90.0": 1.318,
+            "95.0": 1.318,
+            "99.0": 1.318,
+            "99.9": 1.318,
+            "100.0": 1.318
+            }
+            },
+            "cumulative": {
+            "sample_count": 25,
+            "concurrency": 3,
+            "successes": 25,
+            "failures": 0,
+            "avg_resp_time": 1.4584400000000002,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 19594075,
+            "errors": [],
+            "resp_codes": {
+            "200": 25
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.38,
+            "95.0": 1.444,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772381,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 3,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.3145,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567459,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.122,
+            "50.0": 1.122,
+            "90.0": 1.507,
+            "95.0": 1.507,
+            "99.0": 1.507,
+            "99.9": 1.507,
+            "100.0": 1.507
+            }
+            },
+            "cumulative": {
+            "sample_count": 28,
+            "concurrency": 3,
+            "successes": 28,
+            "failures": 0,
+            "avg_resp_time": 1.446214285714286,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 21945435,
+            "errors": [],
+            "resp_codes": {
+            "200": 28
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.404,
+            "95.0": 1.507,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772383,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 3,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.8544999999999998,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567660,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.767,
+            "50.0": 1.767,
+            "90.0": 1.942,
+            "95.0": 1.942,
+            "99.0": 1.942,
+            "99.9": 1.942,
+            "100.0": 1.942
+            }
+            },
+            "cumulative": {
+            "sample_count": 30,
+            "concurrency": 3,
+            "successes": 30,
+            "failures": 0,
+            "avg_resp_time": 1.4734333333333334,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 23513095,
+            "errors": [],
+            "resp_codes": {
+            "200": 30
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.185,
+            "90.0": 1.507,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772384,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 3,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.111,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567584,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.092,
+            "50.0": 1.092,
+            "90.0": 1.13,
+            "95.0": 1.13,
+            "99.0": 1.13,
+            "99.9": 1.13,
+            "100.0": 1.13
+            }
+            },
+            "cumulative": {
+            "sample_count": 32,
+            "concurrency": 3,
+            "successes": 32,
+            "failures": 0,
+            "avg_resp_time": 1.4507812500000001,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 25080679,
+            "errors": [],
+            "resp_codes": {
+            "200": 32
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.507,
+            "95.0": 1.767,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772385,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 3,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.11,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783875,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.11,
+            "50.0": 1.11,
+            "90.0": 1.11,
+            "95.0": 1.11,
+            "99.0": 1.11,
+            "99.9": 1.11,
+            "100.0": 1.11
+            }
+            },
+            "cumulative": {
+            "sample_count": 33,
+            "concurrency": 3,
+            "successes": 33,
+            "failures": 0,
+            "avg_resp_time": 1.4404545454545457,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 25864554,
+            "errors": [],
+            "resp_codes": {
+            "200": 33
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.507,
+            "95.0": 1.767,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772386,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 3,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.234,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783924,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.234,
+            "50.0": 1.234,
+            "90.0": 1.234,
+            "95.0": 1.234,
+            "99.0": 1.234,
+            "99.9": 1.234,
+            "100.0": 1.234
+            }
+            },
+            "cumulative": {
+            "sample_count": 34,
+            "concurrency": 3,
+            "successes": 34,
+            "failures": 0,
+            "avg_resp_time": 1.4343823529411766,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 26648478,
+            "errors": [],
+            "resp_codes": {
+            "200": 34
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.507,
+            "95.0": 1.767,
+            "99.0": 8.447,
+            "99.9": 8.447,
+            "100.0": 8.447
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772387,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 3,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 4.226333333333333,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2350001,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.303,
+            "50.0": 1.498,
+            "90.0": 9.879,
+            "95.0": 9.879,
+            "99.0": 9.879,
+            "99.9": 9.879,
+            "100.0": 9.879
+            }
+            },
+            "cumulative": {
+            "sample_count": 37,
+            "concurrency": 3,
+            "successes": 37,
+            "failures": 0,
+            "avg_resp_time": 1.660756756756757,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 28998479,
+            "errors": [],
+            "resp_codes": {
+            "200": 37
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.187,
+            "90.0": 1.507,
+            "95.0": 1.942,
+            "99.0": 9.879,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772388,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 3,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.121,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567886,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.1,
+            "50.0": 1.1,
+            "90.0": 1.142,
+            "95.0": 1.142,
+            "99.0": 1.142,
+            "99.9": 1.142,
+            "100.0": 1.142
+            }
+            },
+            "cumulative": {
+            "sample_count": 39,
+            "concurrency": 3,
+            "successes": 39,
+            "failures": 0,
+            "avg_resp_time": 1.633076923076923,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 30566365,
+            "errors": [],
+            "resp_codes": {
+            "200": 39
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.185,
+            "90.0": 1.507,
+            "95.0": 1.942,
+            "99.0": 9.879,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772389,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 4,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.227,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567307,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.114,
+            "50.0": 1.114,
+            "90.0": 1.34,
+            "95.0": 1.34,
+            "99.0": 1.34,
+            "99.9": 1.34,
+            "100.0": 1.34
+            }
+            },
+            "cumulative": {
+            "sample_count": 41,
+            "concurrency": 4,
+            "successes": 41,
+            "failures": 0,
+            "avg_resp_time": 1.613268292682927,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 32133672,
+            "errors": [],
+            "resp_codes": {
+            "200": 41
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.185,
+            "90.0": 1.507,
+            "95.0": 1.942,
+            "99.0": 9.879,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772390,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 4,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.2009999999999998,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351093,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.109,
+            "50.0": 1.17,
+            "90.0": 1.324,
+            "95.0": 1.324,
+            "99.0": 1.324,
+            "99.9": 1.324,
+            "100.0": 1.324
+            }
+            },
+            "cumulative": {
+            "sample_count": 44,
+            "concurrency": 4,
+            "successes": 44,
+            "failures": 0,
+            "avg_resp_time": 1.585159090909091,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 34484765,
+            "errors": [],
+            "resp_codes": {
+            "200": 44
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.507,
+            "95.0": 1.942,
+            "99.0": 9.879,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772391,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 4,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.4623333333333335,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2319607,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.163,
+            "50.0": 1.234,
+            "90.0": 1.99,
+            "95.0": 1.99,
+            "99.0": 1.99,
+            "99.9": 1.99,
+            "100.0": 1.99
+            }
+            },
+            "cumulative": {
+            "sample_count": 47,
+            "concurrency": 4,
+            "successes": 47,
+            "failures": 0,
+            "avg_resp_time": 1.5773191489361702,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 36804372,
+            "errors": [],
+            "resp_codes": {
+            "200": 47
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.185,
+            "90.0": 1.507,
+            "95.0": 1.99,
+            "99.0": 9.879,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772392,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 4,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.3419999999999999,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351214,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.08,
+            "50.0": 1.159,
+            "90.0": 1.787,
+            "95.0": 1.787,
+            "99.0": 1.787,
+            "99.9": 1.787,
+            "100.0": 1.787
+            }
+            },
+            "cumulative": {
+            "sample_count": 50,
+            "concurrency": 4,
+            "successes": 50,
+            "failures": 0,
+            "avg_resp_time": 1.5632,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 39155586,
+            "errors": [],
+            "resp_codes": {
+            "200": 50
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.767,
+            "95.0": 1.99,
+            "99.0": 9.879,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772393,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 4,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.377,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567842,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.139,
+            "50.0": 1.139,
+            "90.0": 1.615,
+            "95.0": 1.615,
+            "99.0": 1.615,
+            "99.9": 1.615,
+            "100.0": 1.615
+            }
+            },
+            "cumulative": {
+            "sample_count": 52,
+            "concurrency": 4,
+            "successes": 52,
+            "failures": 0,
+            "avg_resp_time": 1.5560384615384615,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 40723428,
+            "errors": [],
+            "resp_codes": {
+            "200": 52
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.767,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772394,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 4,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.3264999999999998,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567480,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.148,
+            "50.0": 1.148,
+            "90.0": 1.505,
+            "95.0": 1.505,
+            "99.0": 1.505,
+            "99.9": 1.505,
+            "100.0": 1.505
+            }
+            },
+            "cumulative": {
+            "sample_count": 54,
+            "concurrency": 4,
+            "successes": 54,
+            "failures": 0,
+            "avg_resp_time": 1.5475370370370372,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 42290908,
+            "errors": [],
+            "resp_codes": {
+            "200": 54
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.181,
+            "90.0": 1.767,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772395,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 4,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.348,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351538,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.119,
+            "50.0": 1.247,
+            "90.0": 1.678,
+            "95.0": 1.678,
+            "99.0": 1.678,
+            "99.9": 1.678,
+            "100.0": 1.678
+            }
+            },
+            "cumulative": {
+            "sample_count": 57,
+            "concurrency": 4,
+            "successes": 57,
+            "failures": 0,
+            "avg_resp_time": 1.5370350877192984,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 44642446,
+            "errors": [],
+            "resp_codes": {
+            "200": 57
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.185,
+            "90.0": 1.678,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772396,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 4,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.391333333333333,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351534,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.299,
+            "50.0": 1.331,
+            "90.0": 1.544,
+            "95.0": 1.544,
+            "99.0": 1.544,
+            "99.9": 1.544,
+            "100.0": 1.544
+            }
+            },
+            "cumulative": {
+            "sample_count": 60,
+            "concurrency": 4,
+            "successes": 60,
+            "failures": 0,
+            "avg_resp_time": 1.52975,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 46993980,
+            "errors": [],
+            "resp_codes": {
+            "200": 60
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.187,
+            "90.0": 1.678,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772397,
+            "current": {
+            "sample_count": 4,
+            "concurrency": 4,
+            "successes": 4,
+            "failures": 0,
+            "avg_resp_time": 1.2447500000000002,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 3135777,
+            "errors": [],
+            "resp_codes": {
+            "200": 4
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 0.964,
+            "90.0": 1.556,
+            "95.0": 1.556,
+            "99.0": 1.556,
+            "99.9": 1.556,
+            "100.0": 1.556
+            }
+            },
+            "cumulative": {
+            "sample_count": 64,
+            "concurrency": 4,
+            "successes": 64,
+            "failures": 0,
+            "avg_resp_time": 1.5119375,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 50129757,
+            "errors": [],
+            "resp_codes": {
+            "200": 64
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.187,
+            "90.0": 1.678,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772398,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 4,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.3795,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567893,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.033,
+            "50.0": 1.033,
+            "90.0": 1.726,
+            "95.0": 1.726,
+            "99.0": 1.726,
+            "99.9": 1.726,
+            "100.0": 1.726
+            }
+            },
+            "cumulative": {
+            "sample_count": 66,
+            "concurrency": 4,
+            "successes": 66,
+            "failures": 0,
+            "avg_resp_time": 1.5079242424242423,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 51697650,
+            "errors": [],
+            "resp_codes": {
+            "200": 66
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.187,
+            "90.0": 1.678,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772399,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 4,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.4554999999999998,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567839,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.142,
+            "50.0": 1.142,
+            "90.0": 1.769,
+            "95.0": 1.769,
+            "99.0": 1.769,
+            "99.9": 1.769,
+            "100.0": 1.769
+            }
+            },
+            "cumulative": {
+            "sample_count": 68,
+            "concurrency": 4,
+            "successes": 68,
+            "failures": 0,
+            "avg_resp_time": 1.5063823529411764,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 53265489,
+            "errors": [],
+            "resp_codes": {
+            "200": 68
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.187,
+            "90.0": 1.726,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772400,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 4,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.2833333333333332,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351790,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.022,
+            "50.0": 1.089,
+            "90.0": 1.739,
+            "95.0": 1.739,
+            "99.0": 1.739,
+            "99.9": 1.739,
+            "100.0": 1.739
+            }
+            },
+            "cumulative": {
+            "sample_count": 71,
+            "concurrency": 4,
+            "successes": 71,
+            "failures": 0,
+            "avg_resp_time": 1.496957746478873,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 55617279,
+            "errors": [],
+            "resp_codes": {
+            "200": 71
+            },
+            "percentiles": {
+            "0.0": 0.93,
+            "50.0": 1.187,
+            "90.0": 1.739,
+            "95.0": 1.787,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772401,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 4,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.2086666666666666,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351826,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.035,
+            "90.0": 1.686,
+            "95.0": 1.686,
+            "99.0": 1.686,
+            "99.9": 1.686,
+            "100.0": 1.686
+            }
+            },
+            "cumulative": {
+            "sample_count": 74,
+            "concurrency": 4,
+            "successes": 74,
+            "failures": 0,
+            "avg_resp_time": 1.4852702702702703,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 57969105,
+            "errors": [],
+            "resp_codes": {
+            "200": 74
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.185,
+            "90.0": 1.739,
+            "95.0": 1.787,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772402,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.1606666666666667,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2351797,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 0.921,
+            "50.0": 0.984,
+            "90.0": 1.577,
+            "95.0": 1.577,
+            "99.0": 1.577,
+            "99.9": 1.577,
+            "100.0": 1.577
+            }
+            },
+            "cumulative": {
+            "sample_count": 77,
+            "concurrency": 5,
+            "successes": 77,
+            "failures": 0,
+            "avg_resp_time": 1.4726233766233765,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 60320902,
+            "errors": [],
+            "resp_codes": {
+            "200": 77
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.185,
+            "90.0": 1.726,
+            "95.0": 1.787,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772403,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.5393333333333334,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352020,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.228,
+            "50.0": 1.691,
+            "90.0": 1.699,
+            "95.0": 1.699,
+            "99.0": 1.699,
+            "99.9": 1.699,
+            "100.0": 1.699
+            }
+            },
+            "cumulative": {
+            "sample_count": 80,
+            "concurrency": 5,
+            "successes": 80,
+            "failures": 0,
+            "avg_resp_time": 1.4751249999999998,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 62672922,
+            "errors": [],
+            "resp_codes": {
+            "200": 80
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.187,
+            "90.0": 1.726,
+            "95.0": 1.787,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772404,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.8175,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568319,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.694,
+            "50.0": 1.694,
+            "90.0": 1.941,
+            "95.0": 1.941,
+            "99.0": 1.941,
+            "99.9": 1.941,
+            "100.0": 1.941
+            }
+            },
+            "cumulative": {
+            "sample_count": 82,
+            "concurrency": 5,
+            "successes": 82,
+            "failures": 0,
+            "avg_resp_time": 1.4834756097560975,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 64241241,
+            "errors": [],
+            "resp_codes": {
+            "200": 82
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.209,
+            "90.0": 1.739,
+            "95.0": 1.941,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772405,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.6513333333333333,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352227,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.188,
+            "50.0": 1.803,
+            "90.0": 1.963,
+            "95.0": 1.963,
+            "99.0": 1.963,
+            "99.9": 1.963,
+            "100.0": 1.963
+            }
+            },
+            "cumulative": {
+            "sample_count": 85,
+            "concurrency": 5,
+            "successes": 85,
+            "failures": 0,
+            "avg_resp_time": 1.4893999999999998,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 66593468,
+            "errors": [],
+            "resp_codes": {
+            "200": 85
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.225,
+            "90.0": 1.769,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772406,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.5816666666666668,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352161,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.043,
+            "50.0": 1.795,
+            "90.0": 1.907,
+            "95.0": 1.907,
+            "99.0": 1.907,
+            "99.9": 1.907,
+            "100.0": 1.907
+            }
+            },
+            "cumulative": {
+            "sample_count": 88,
+            "concurrency": 5,
+            "successes": 88,
+            "failures": 0,
+            "avg_resp_time": 1.4925454545454544,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 68945629,
+            "errors": [],
+            "resp_codes": {
+            "200": 88
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.225,
+            "90.0": 1.787,
+            "95.0": 1.942,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772407,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.5516666666666667,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352193,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.22,
+            "50.0": 1.699,
+            "90.0": 1.736,
+            "95.0": 1.736,
+            "99.0": 1.736,
+            "99.9": 1.736,
+            "100.0": 1.736
+            }
+            },
+            "cumulative": {
+            "sample_count": 91,
+            "concurrency": 5,
+            "successes": 91,
+            "failures": 0,
+            "avg_resp_time": 1.4944945054945054,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 71297822,
+            "errors": [],
+            "resp_codes": {
+            "200": 91
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.228,
+            "90.0": 1.787,
+            "95.0": 1.941,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772408,
+            "current": {
+            "sample_count": 5,
+            "concurrency": 5,
+            "successes": 5,
+            "failures": 0,
+            "avg_resp_time": 1.5512000000000001,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 3888810,
+            "errors": [],
+            "resp_codes": {
+            "200": 5
+            },
+            "percentiles": {
+            "0.0": 1.066,
+            "50.0": 1.641,
+            "90.0": 1.74,
+            "95.0": 1.74,
+            "99.0": 1.74,
+            "99.9": 1.74,
+            "100.0": 1.74
+            }
+            },
+            "cumulative": {
+            "sample_count": 96,
+            "concurrency": 5,
+            "successes": 96,
+            "failures": 0,
+            "avg_resp_time": 1.4974479166666665,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 75186632,
+            "errors": [],
+            "resp_codes": {
+            "200": 96
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.234,
+            "90.0": 1.769,
+            "95.0": 1.941,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772409,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.4946666666666666,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352149,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.166,
+            "50.0": 1.555,
+            "90.0": 1.763,
+            "95.0": 1.763,
+            "99.0": 1.763,
+            "99.9": 1.763,
+            "100.0": 1.763
+            }
+            },
+            "cumulative": {
+            "sample_count": 99,
+            "concurrency": 5,
+            "successes": 99,
+            "failures": 0,
+            "avg_resp_time": 1.4973636363636365,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 77538781,
+            "errors": [],
+            "resp_codes": {
+            "200": 99
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.234,
+            "90.0": 1.769,
+            "95.0": 1.941,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772411,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 5,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.76,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 783913,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.76,
+            "50.0": 1.76,
+            "90.0": 1.76,
+            "95.0": 1.76,
+            "99.0": 1.76,
+            "99.9": 1.76,
+            "100.0": 1.76
+            }
+            },
+            "cumulative": {
+            "sample_count": 103,
+            "concurrency": 5,
+            "successes": 103,
+            "failures": 0,
+            "avg_resp_time": 1.4989126213592234,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 80674868,
+            "errors": [],
+            "resp_codes": {
+            "200": 103
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.247,
+            "90.0": 1.787,
+            "95.0": 1.941,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772412,
+            "current": {
+            "sample_count": 4,
+            "concurrency": 5,
+            "successes": 4,
+            "failures": 0,
+            "avg_resp_time": 1.8325,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 3136472,
+            "errors": [],
+            "resp_codes": {
+            "200": 4
+            },
+            "percentiles": {
+            "0.0": 1.138,
+            "50.0": 2.01,
+            "90.0": 2.141,
+            "95.0": 2.141,
+            "99.0": 2.141,
+            "99.9": 2.141,
+            "100.0": 2.141
+            }
+            },
+            "cumulative": {
+            "sample_count": 107,
+            "concurrency": 5,
+            "successes": 107,
+            "failures": 0,
+            "avg_resp_time": 1.5113831775700937,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 83811340,
+            "errors": [],
+            "resp_codes": {
+            "200": 107
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.281,
+            "90.0": 1.803,
+            "95.0": 1.99,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772413,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.4926666666666666,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352163,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.006,
+            "50.0": 1.534,
+            "90.0": 1.938,
+            "95.0": 1.938,
+            "99.0": 1.938,
+            "99.9": 1.938,
+            "100.0": 1.938
+            }
+            },
+            "cumulative": {
+            "sample_count": 110,
+            "concurrency": 5,
+            "successes": 110,
+            "failures": 0,
+            "avg_resp_time": 1.5108727272727276,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 86163503,
+            "errors": [],
+            "resp_codes": {
+            "200": 110
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.281,
+            "90.0": 1.806,
+            "95.0": 1.99,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772414,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.5353333333333332,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352137,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.133,
+            "50.0": 1.702,
+            "90.0": 1.771,
+            "95.0": 1.771,
+            "99.0": 1.771,
+            "99.9": 1.771,
+            "100.0": 1.771
+            }
+            },
+            "cumulative": {
+            "sample_count": 113,
+            "concurrency": 5,
+            "successes": 113,
+            "failures": 0,
+            "avg_resp_time": 1.5115221238938055,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 88515640,
+            "errors": [],
+            "resp_codes": {
+            "200": 113
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.299,
+            "90.0": 1.806,
+            "95.0": 1.963,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772415,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.558,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352092,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.066,
+            "50.0": 1.776,
+            "90.0": 1.832,
+            "95.0": 1.832,
+            "99.0": 1.832,
+            "99.9": 1.832,
+            "100.0": 1.832
+            }
+            },
+            "cumulative": {
+            "sample_count": 116,
+            "concurrency": 5,
+            "successes": 116,
+            "failures": 0,
+            "avg_resp_time": 1.5127241379310348,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 90867732,
+            "errors": [],
+            "resp_codes": {
+            "200": 116
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.299,
+            "90.0": 1.806,
+            "95.0": 1.963,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772416,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 5,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 2.15,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 752698,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 2.15,
+            "50.0": 2.151,
+            "90.0": 2.151,
+            "95.0": 2.151,
+            "99.0": 2.151,
+            "99.9": 2.151,
+            "100.0": 2.151
+            }
+            },
+            "cumulative": {
+            "sample_count": 117,
+            "concurrency": 5,
+            "successes": 117,
+            "failures": 0,
+            "avg_resp_time": 1.5181709401709405,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 91620430,
+            "errors": [],
+            "resp_codes": {
+            "200": 117
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.302,
+            "90.0": 1.832,
+            "95.0": 1.99,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772417,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.7853333333333332,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352163,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.246,
+            "50.0": 1.91,
+            "90.0": 2.201,
+            "95.0": 2.201,
+            "99.0": 2.201,
+            "99.9": 2.201,
+            "100.0": 2.201
+            }
+            },
+            "cumulative": {
+            "sample_count": 120,
+            "concurrency": 5,
+            "successes": 120,
+            "failures": 0,
+            "avg_resp_time": 1.5248500000000003,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 93972593,
+            "errors": [],
+            "resp_codes": {
+            "200": 120
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.302,
+            "90.0": 1.91,
+            "95.0": 2.01,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772418,
+            "current": {
+            "sample_count": 4,
+            "concurrency": 5,
+            "successes": 4,
+            "failures": 0,
+            "avg_resp_time": 1.55175,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 3136009,
+            "errors": [],
+            "resp_codes": {
+            "200": 4
+            },
+            "percentiles": {
+            "0.0": 0.954,
+            "50.0": 1.535,
+            "90.0": 2.105,
+            "95.0": 2.105,
+            "99.0": 2.105,
+            "99.9": 2.105,
+            "100.0": 2.105
+            }
+            },
+            "cumulative": {
+            "sample_count": 124,
+            "concurrency": 5,
+            "successes": 124,
+            "failures": 0,
+            "avg_resp_time": 1.5257177419354842,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 97108602,
+            "errors": [],
+            "resp_codes": {
+            "200": 124
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.303,
+            "90.0": 1.938,
+            "95.0": 2.042,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772419,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.6163333333333334,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352220,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.229,
+            "50.0": 1.8,
+            "90.0": 1.82,
+            "95.0": 1.82,
+            "99.0": 1.82,
+            "99.9": 1.82,
+            "100.0": 1.82
+            }
+            },
+            "cumulative": {
+            "sample_count": 127,
+            "concurrency": 5,
+            "successes": 127,
+            "failures": 0,
+            "avg_resp_time": 1.5278582677165355,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 99460822,
+            "errors": [],
+            "resp_codes": {
+            "200": 127
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.318,
+            "90.0": 1.91,
+            "95.0": 2.042,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772420,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.5915,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568248,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.077,
+            "50.0": 1.077,
+            "90.0": 2.107,
+            "95.0": 2.107,
+            "99.0": 2.107,
+            "99.9": 2.107,
+            "100.0": 2.107
+            }
+            },
+            "cumulative": {
+            "sample_count": 129,
+            "concurrency": 5,
+            "successes": 129,
+            "failures": 0,
+            "avg_resp_time": 1.52884496124031,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 101029070,
+            "errors": [],
+            "resp_codes": {
+            "200": 129
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.318,
+            "90.0": 1.938,
+            "95.0": 2.105,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772421,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.767666666666667,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352180,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.23,
+            "50.0": 1.99,
+            "90.0": 2.083,
+            "95.0": 2.083,
+            "99.0": 2.083,
+            "99.9": 2.083,
+            "100.0": 2.083
+            }
+            },
+            "cumulative": {
+            "sample_count": 132,
+            "concurrency": 5,
+            "successes": 132,
+            "failures": 0,
+            "avg_resp_time": 1.5342727272727272,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 103381250,
+            "errors": [],
+            "resp_codes": {
+            "200": 132
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.318,
+            "90.0": 1.942,
+            "95.0": 2.083,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772422,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.8765,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568231,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.645,
+            "50.0": 1.645,
+            "90.0": 2.109,
+            "95.0": 2.109,
+            "99.0": 2.109,
+            "99.9": 2.109,
+            "100.0": 2.109
+            }
+            },
+            "cumulative": {
+            "sample_count": 134,
+            "concurrency": 5,
+            "successes": 134,
+            "failures": 0,
+            "avg_resp_time": 1.5393805970149252,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 104949481,
+            "errors": [],
+            "resp_codes": {
+            "200": 134
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.324,
+            "90.0": 1.963,
+            "95.0": 2.105,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772423,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.5326666666666668,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352186,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.01,
+            "50.0": 1.677,
+            "90.0": 1.911,
+            "95.0": 1.911,
+            "99.0": 1.911,
+            "99.9": 1.911,
+            "100.0": 1.911
+            }
+            },
+            "cumulative": {
+            "sample_count": 137,
+            "concurrency": 5,
+            "successes": 137,
+            "failures": 0,
+            "avg_resp_time": 1.5392335766423357,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 107301667,
+            "errors": [],
+            "resp_codes": {
+            "200": 137
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.326,
+            "90.0": 1.942,
+            "95.0": 2.105,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772424,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.694,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352174,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.29,
+            "50.0": 1.877,
+            "90.0": 1.915,
+            "95.0": 1.915,
+            "99.0": 1.915,
+            "99.9": 1.915,
+            "100.0": 1.915
+            }
+            },
+            "cumulative": {
+            "sample_count": 140,
+            "concurrency": 5,
+            "successes": 140,
+            "failures": 0,
+            "avg_resp_time": 1.5425499999999999,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 109653841,
+            "errors": [],
+            "resp_codes": {
+            "200": 140
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.326,
+            "90.0": 1.942,
+            "95.0": 2.105,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772425,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.637,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1567805,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.294,
+            "50.0": 1.294,
+            "90.0": 1.98,
+            "95.0": 1.98,
+            "99.0": 1.98,
+            "99.9": 1.98,
+            "100.0": 1.98
+            }
+            },
+            "cumulative": {
+            "sample_count": 142,
+            "concurrency": 5,
+            "successes": 142,
+            "failures": 0,
+            "avg_resp_time": 1.543880281690141,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 111221646,
+            "errors": [],
+            "resp_codes": {
+            "200": 142
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.326,
+            "90.0": 1.963,
+            "95.0": 2.105,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772426,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 2.1955,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568172,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 2.068,
+            "50.0": 2.069,
+            "90.0": 2.323,
+            "95.0": 2.323,
+            "99.0": 2.323,
+            "99.9": 2.323,
+            "100.0": 2.323
+            }
+            },
+            "cumulative": {
+            "sample_count": 144,
+            "concurrency": 5,
+            "successes": 144,
+            "failures": 0,
+            "avg_resp_time": 1.5529305555555555,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 112789818,
+            "errors": [],
+            "resp_codes": {
+            "200": 144
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.331,
+            "90.0": 1.99,
+            "95.0": 2.107,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772427,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.728,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2320551,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.053,
+            "50.0": 1.921,
+            "90.0": 2.211,
+            "95.0": 2.211,
+            "99.0": 2.211,
+            "99.9": 2.211,
+            "100.0": 2.211
+            }
+            },
+            "cumulative": {
+            "sample_count": 147,
+            "concurrency": 5,
+            "successes": 147,
+            "failures": 0,
+            "avg_resp_time": 1.556503401360544,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 115110369,
+            "errors": [],
+            "resp_codes": {
+            "200": 147
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.34,
+            "90.0": 1.99,
+            "95.0": 2.109,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772428,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.6780000000000002,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352177,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.324,
+            "50.0": 1.759,
+            "90.0": 1.951,
+            "95.0": 1.951,
+            "99.0": 1.951,
+            "99.9": 1.951,
+            "100.0": 1.951
+            }
+            },
+            "cumulative": {
+            "sample_count": 150,
+            "concurrency": 5,
+            "successes": 150,
+            "failures": 0,
+            "avg_resp_time": 1.558933333333333,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 117462546,
+            "errors": [],
+            "resp_codes": {
+            "200": 150
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.34,
+            "90.0": 1.99,
+            "95.0": 2.109,
+            "99.0": 8.447,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772429,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.6893333333333331,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352422,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.126,
+            "50.0": 1.965,
+            "90.0": 1.977,
+            "95.0": 1.977,
+            "99.0": 1.977,
+            "99.9": 1.977,
+            "100.0": 1.977
+            }
+            },
+            "cumulative": {
+            "sample_count": 153,
+            "concurrency": 5,
+            "successes": 153,
+            "failures": 0,
+            "avg_resp_time": 1.5614901960784313,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 119814968,
+            "errors": [],
+            "resp_codes": {
+            "200": 153
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.342,
+            "90.0": 1.99,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772430,
+            "current": {
+            "sample_count": 4,
+            "concurrency": 5,
+            "successes": 4,
+            "failures": 0,
+            "avg_resp_time": 1.58825,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 3136919,
+            "errors": [],
+            "resp_codes": {
+            "200": 4
+            },
+            "percentiles": {
+            "0.0": 1.16,
+            "50.0": 1.608,
+            "90.0": 1.923,
+            "95.0": 1.923,
+            "99.0": 1.923,
+            "99.9": 1.923,
+            "100.0": 1.923
+            }
+            },
+            "cumulative": {
+            "sample_count": 157,
+            "concurrency": 5,
+            "successes": 157,
+            "failures": 0,
+            "avg_resp_time": 1.562171974522293,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 122951887,
+            "errors": [],
+            "resp_codes": {
+            "200": 157
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.38,
+            "90.0": 1.98,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772431,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.8835,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1536903,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.693,
+            "50.0": 1.693,
+            "90.0": 2.075,
+            "95.0": 2.075,
+            "99.0": 2.075,
+            "99.9": 2.075,
+            "100.0": 2.075
+            }
+            },
+            "cumulative": {
+            "sample_count": 159,
+            "concurrency": 5,
+            "successes": 159,
+            "failures": 0,
+            "avg_resp_time": 1.5662138364779874,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 124488790,
+            "errors": [],
+            "resp_codes": {
+            "200": 159
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.404,
+            "90.0": 1.99,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772432,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.6276666666666666,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2320844,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.165,
+            "50.0": 1.8,
+            "90.0": 1.918,
+            "95.0": 1.918,
+            "99.0": 1.918,
+            "99.9": 1.918,
+            "100.0": 1.918
+            }
+            },
+            "cumulative": {
+            "sample_count": 162,
+            "concurrency": 5,
+            "successes": 162,
+            "failures": 0,
+            "avg_resp_time": 1.5673518518518519,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 126809634,
+            "errors": [],
+            "resp_codes": {
+            "200": 162
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.404,
+            "90.0": 1.99,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772433,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.5453333333333334,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352428,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.025,
+            "50.0": 1.781,
+            "90.0": 1.83,
+            "95.0": 1.83,
+            "99.0": 1.83,
+            "99.9": 1.83,
+            "100.0": 1.83
+            }
+            },
+            "cumulative": {
+            "sample_count": 165,
+            "concurrency": 5,
+            "successes": 165,
+            "failures": 0,
+            "avg_resp_time": 1.5669515151515152,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 129162062,
+            "errors": [],
+            "resp_codes": {
+            "200": 165
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.444,
+            "90.0": 1.99,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772434,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.7653333333333332,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352442,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.404,
+            "50.0": 1.886,
+            "90.0": 2.006,
+            "95.0": 2.006,
+            "99.0": 2.006,
+            "99.9": 2.006,
+            "100.0": 2.006
+            }
+            },
+            "cumulative": {
+            "sample_count": 168,
+            "concurrency": 5,
+            "successes": 168,
+            "failures": 0,
+            "avg_resp_time": 1.5704940476190477,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 131514504,
+            "errors": [],
+            "resp_codes": {
+            "200": 168
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.444,
+            "90.0": 1.99,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772435,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.6505,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568038,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.23,
+            "50.0": 1.23,
+            "90.0": 2.071,
+            "95.0": 2.071,
+            "99.0": 2.071,
+            "99.9": 2.071,
+            "100.0": 2.071
+            }
+            },
+            "cumulative": {
+            "sample_count": 170,
+            "concurrency": 5,
+            "successes": 170,
+            "failures": 0,
+            "avg_resp_time": 1.571435294117647,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 133082542,
+            "errors": [],
+            "resp_codes": {
+            "200": 170
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.444,
+            "90.0": 1.99,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772436,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 2.1475,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568782,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 2.021,
+            "50.0": 2.021,
+            "90.0": 2.275,
+            "95.0": 2.275,
+            "99.0": 2.275,
+            "99.9": 2.275,
+            "100.0": 2.275
+            }
+            },
+            "cumulative": {
+            "sample_count": 172,
+            "concurrency": 5,
+            "successes": 172,
+            "failures": 0,
+            "avg_resp_time": 1.5781337209302326,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 134651324,
+            "errors": [],
+            "resp_codes": {
+            "200": 172
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.498,
+            "90.0": 2.01,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772437,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.8543333333333336,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352762,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.379,
+            "50.0": 2.047,
+            "90.0": 2.137,
+            "95.0": 2.137,
+            "99.0": 2.137,
+            "99.9": 2.137,
+            "100.0": 2.137
+            }
+            },
+            "cumulative": {
+            "sample_count": 175,
+            "concurrency": 5,
+            "successes": 175,
+            "failures": 0,
+            "avg_resp_time": 1.5828685714285715,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 137004086,
+            "errors": [],
+            "resp_codes": {
+            "200": 175
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.505,
+            "90.0": 2.042,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772438,
+            "current": {
+            "sample_count": 4,
+            "concurrency": 5,
+            "successes": 4,
+            "failures": 0,
+            "avg_resp_time": 1.5585,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 3137298,
+            "errors": [],
+            "resp_codes": {
+            "200": 4
+            },
+            "percentiles": {
+            "0.0": 0.981,
+            "50.0": 1.513,
+            "90.0": 2.091,
+            "95.0": 2.091,
+            "99.0": 2.091,
+            "99.9": 2.091,
+            "100.0": 2.091
+            }
+            },
+            "cumulative": {
+            "sample_count": 179,
+            "concurrency": 5,
+            "successes": 179,
+            "failures": 0,
+            "avg_resp_time": 1.5823240223463686,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 140141384,
+            "errors": [],
+            "resp_codes": {
+            "200": 179
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.507,
+            "90.0": 2.042,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772439,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.4590000000000003,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352698,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.177,
+            "50.0": 1.321,
+            "90.0": 1.879,
+            "95.0": 1.879,
+            "99.0": 1.879,
+            "99.9": 1.879,
+            "100.0": 1.879
+            }
+            },
+            "cumulative": {
+            "sample_count": 182,
+            "concurrency": 5,
+            "successes": 182,
+            "failures": 0,
+            "avg_resp_time": 1.5802912087912089,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 142494082,
+            "errors": [],
+            "resp_codes": {
+            "200": 182
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.505,
+            "90.0": 2.042,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772440,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.9365,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1537167,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.926,
+            "50.0": 1.926,
+            "90.0": 1.947,
+            "95.0": 1.947,
+            "99.0": 1.947,
+            "99.9": 1.947,
+            "100.0": 1.947
+            }
+            },
+            "cumulative": {
+            "sample_count": 184,
+            "concurrency": 5,
+            "successes": 184,
+            "failures": 0,
+            "avg_resp_time": 1.5841630434782608,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 144031249,
+            "errors": [],
+            "resp_codes": {
+            "200": 184
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.507,
+            "90.0": 2.042,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772441,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.5616666666666668,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352737,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.21,
+            "50.0": 1.713,
+            "90.0": 1.762,
+            "95.0": 1.762,
+            "99.0": 1.762,
+            "99.9": 1.762,
+            "100.0": 1.762
+            }
+            },
+            "cumulative": {
+            "sample_count": 187,
+            "concurrency": 5,
+            "successes": 187,
+            "failures": 0,
+            "avg_resp_time": 1.583802139037433,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 146383986,
+            "errors": [],
+            "resp_codes": {
+            "200": 187
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.513,
+            "90.0": 2.021,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772442,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.4400000000000002,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352777,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.081,
+            "50.0": 1.548,
+            "90.0": 1.691,
+            "95.0": 1.691,
+            "99.0": 1.691,
+            "99.9": 1.691,
+            "100.0": 1.691
+            }
+            },
+            "cumulative": {
+            "sample_count": 190,
+            "concurrency": 5,
+            "successes": 190,
+            "failures": 0,
+            "avg_resp_time": 1.5815315789473683,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 148736763,
+            "errors": [],
+            "resp_codes": {
+            "200": 190
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.513,
+            "90.0": 2.021,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772443,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.6159999999999999,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2321170,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.126,
+            "50.0": 1.721,
+            "90.0": 2.001,
+            "95.0": 2.001,
+            "99.0": 2.001,
+            "99.9": 2.001,
+            "100.0": 2.001
+            }
+            },
+            "cumulative": {
+            "sample_count": 193,
+            "concurrency": 5,
+            "successes": 193,
+            "failures": 0,
+            "avg_resp_time": 1.5820673575129534,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 151057933,
+            "errors": [],
+            "resp_codes": {
+            "200": 193
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.529,
+            "90.0": 2.021,
+            "95.0": 2.107,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772444,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.7266666666666666,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352729,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.11,
+            "50.0": 1.824,
+            "90.0": 2.247,
+            "95.0": 2.247,
+            "99.0": 2.247,
+            "99.9": 2.247,
+            "100.0": 2.247
+            }
+            },
+            "cumulative": {
+            "sample_count": 196,
+            "concurrency": 5,
+            "successes": 196,
+            "failures": 0,
+            "avg_resp_time": 1.584280612244898,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 153410662,
+            "errors": [],
+            "resp_codes": {
+            "200": 196
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.529,
+            "90.0": 2.021,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772445,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 5,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 1.937,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 784289,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 1.937,
+            "50.0": 1.937,
+            "90.0": 1.937,
+            "95.0": 1.937,
+            "99.0": 1.937,
+            "99.9": 1.937,
+            "100.0": 1.937
+            }
+            },
+            "cumulative": {
+            "sample_count": 197,
+            "concurrency": 5,
+            "successes": 197,
+            "failures": 0,
+            "avg_resp_time": 1.5860710659898478,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 154194951,
+            "errors": [],
+            "resp_codes": {
+            "200": 197
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.534,
+            "90.0": 2.021,
+            "95.0": 2.109,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772446,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.7546666666666668,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352780,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.283,
+            "50.0": 1.837,
+            "90.0": 2.145,
+            "95.0": 2.145,
+            "99.0": 2.145,
+            "99.9": 2.145,
+            "100.0": 2.145
+            }
+            },
+            "cumulative": {
+            "sample_count": 200,
+            "concurrency": 5,
+            "successes": 200,
+            "failures": 0,
+            "avg_resp_time": 1.5886000000000002,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 156547731,
+            "errors": [],
+            "resp_codes": {
+            "200": 200
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.534,
+            "90.0": 2.042,
+            "95.0": 2.137,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772447,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.7666666666666668,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352777,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.223,
+            "50.0": 1.865,
+            "90.0": 2.213,
+            "95.0": 2.213,
+            "99.0": 2.213,
+            "99.9": 2.213,
+            "100.0": 2.213
+            }
+            },
+            "cumulative": {
+            "sample_count": 203,
+            "concurrency": 5,
+            "successes": 203,
+            "failures": 0,
+            "avg_resp_time": 1.5912315270935962,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 158900508,
+            "errors": [],
+            "resp_codes": {
+            "200": 203
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.535,
+            "90.0": 2.047,
+            "95.0": 2.141,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772448,
+            "current": {
+            "sample_count": 1,
+            "concurrency": 5,
+            "successes": 1,
+            "failures": 0,
+            "avg_resp_time": 2.148,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 784501,
+            "errors": [],
+            "resp_codes": {
+            "200": 1
+            },
+            "percentiles": {
+            "0.0": 2.148,
+            "50.0": 2.149,
+            "90.0": 2.149,
+            "95.0": 2.149,
+            "99.0": 2.149,
+            "99.9": 2.149,
+            "100.0": 2.149
+            }
+            },
+            "cumulative": {
+            "sample_count": 204,
+            "concurrency": 5,
+            "successes": 204,
+            "failures": 0,
+            "avg_resp_time": 1.5939607843137258,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 159685009,
+            "errors": [],
+            "resp_codes": {
+            "200": 204
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.535,
+            "90.0": 2.069,
+            "95.0": 2.145,
+            "99.0": 2.323,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772449,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 2.0706666666666664,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2321132,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.428,
+            "50.0": 2.325,
+            "90.0": 2.461,
+            "95.0": 2.461,
+            "99.0": 2.461,
+            "99.9": 2.461,
+            "100.0": 2.461
+            }
+            },
+            "cumulative": {
+            "sample_count": 207,
+            "concurrency": 5,
+            "successes": 207,
+            "failures": 0,
+            "avg_resp_time": 1.6008695652173917,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 162006141,
+            "errors": [],
+            "resp_codes": {
+            "200": 207
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.544,
+            "90.0": 2.071,
+            "95.0": 2.151,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772450,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.869,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352712,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.117,
+            "50.0": 2.153,
+            "90.0": 2.339,
+            "95.0": 2.339,
+            "99.0": 2.339,
+            "99.9": 2.339,
+            "100.0": 2.339
+            }
+            },
+            "cumulative": {
+            "sample_count": 210,
+            "concurrency": 5,
+            "successes": 210,
+            "failures": 0,
+            "avg_resp_time": 1.6047000000000005,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 164358853,
+            "errors": [],
+            "resp_codes": {
+            "200": 210
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.544,
+            "90.0": 2.083,
+            "95.0": 2.201,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772451,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.834,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568286,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.469,
+            "50.0": 1.469,
+            "90.0": 2.199,
+            "95.0": 2.199,
+            "99.0": 2.199,
+            "99.9": 2.199,
+            "100.0": 2.199
+            }
+            },
+            "cumulative": {
+            "sample_count": 212,
+            "concurrency": 5,
+            "successes": 212,
+            "failures": 0,
+            "avg_resp_time": 1.6068632075471703,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 165927139,
+            "errors": [],
+            "resp_codes": {
+            "200": 212
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.544,
+            "90.0": 2.091,
+            "95.0": 2.199,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772452,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 2.365,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1537230,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 2.334,
+            "50.0": 2.335,
+            "90.0": 2.395,
+            "95.0": 2.395,
+            "99.0": 2.395,
+            "99.9": 2.395,
+            "100.0": 2.395
+            }
+            },
+            "cumulative": {
+            "sample_count": 214,
+            "concurrency": 5,
+            "successes": 214,
+            "failures": 0,
+            "avg_resp_time": 1.6139485981308417,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 167464369,
+            "errors": [],
+            "resp_codes": {
+            "200": 214
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.548,
+            "90.0": 2.107,
+            "95.0": 2.211,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772453,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 2.138666666666667,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2352755,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.798,
+            "50.0": 2.261,
+            "90.0": 2.357,
+            "95.0": 2.357,
+            "99.0": 2.357,
+            "99.9": 2.357,
+            "100.0": 2.357
+            }
+            },
+            "cumulative": {
+            "sample_count": 217,
+            "concurrency": 5,
+            "successes": 217,
+            "failures": 0,
+            "avg_resp_time": 1.621202764976959,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 169817124,
+            "errors": [],
+            "resp_codes": {
+            "200": 217
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.556,
+            "90.0": 2.109,
+            "95.0": 2.247,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772454,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.6199999999999999,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568509,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.037,
+            "50.0": 1.037,
+            "90.0": 2.203,
+            "95.0": 2.203,
+            "99.0": 2.203,
+            "99.9": 2.203,
+            "100.0": 2.203
+            }
+            },
+            "cumulative": {
+            "sample_count": 219,
+            "concurrency": 5,
+            "successes": 219,
+            "failures": 0,
+            "avg_resp_time": 1.6211917808219183,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 171385633,
+            "errors": [],
+            "resp_codes": {
+            "200": 219
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.556,
+            "90.0": 2.137,
+            "95.0": 2.247,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772455,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 2.298,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568877,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 2.186,
+            "50.0": 2.187,
+            "90.0": 2.411,
+            "95.0": 2.411,
+            "99.0": 2.411,
+            "99.9": 2.411,
+            "100.0": 2.411
+            }
+            },
+            "cumulative": {
+            "sample_count": 221,
+            "concurrency": 5,
+            "successes": 221,
+            "failures": 0,
+            "avg_resp_time": 1.6273167420814485,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 172954510,
+            "errors": [],
+            "resp_codes": {
+            "200": 221
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.577,
+            "90.0": 2.145,
+            "95.0": 2.261,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772456,
+            "current": {
+            "sample_count": 2,
+            "concurrency": 5,
+            "successes": 2,
+            "failures": 0,
+            "avg_resp_time": 1.751,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 1568577,
+            "errors": [],
+            "resp_codes": {
+            "200": 2
+            },
+            "percentiles": {
+            "0.0": 1.276,
+            "50.0": 1.276,
+            "90.0": 2.227,
+            "95.0": 2.227,
+            "99.0": 2.227,
+            "99.9": 2.227,
+            "100.0": 2.227
+            }
+            },
+            "cumulative": {
+            "sample_count": 223,
+            "concurrency": 5,
+            "successes": 223,
+            "failures": 0,
+            "avg_resp_time": 1.6284260089686105,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 174523087,
+            "errors": [],
+            "resp_codes": {
+            "200": 223
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.577,
+            "90.0": 2.149,
+            "95.0": 2.261,
+            "99.0": 2.461,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            },
+            {
+            "source_id": 140506423403072,
+            "timestamp": 1530772457,
+            "current": {
+            "sample_count": 3,
+            "concurrency": 5,
+            "successes": 3,
+            "failures": 0,
+            "avg_resp_time": 1.9626666666666666,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 2353133,
+            "errors": [],
+            "resp_codes": {
+            "200": 3
+            },
+            "percentiles": {
+            "0.0": 1.238,
+            "50.0": 2.165,
+            "90.0": 2.487,
+            "95.0": 2.487,
+            "99.0": 2.487,
+            "99.9": 2.487,
+            "100.0": 2.487
+            }
+            },
+            "cumulative": {
+            "sample_count": 226,
+            "concurrency": 5,
+            "successes": 226,
+            "failures": 0,
+            "avg_resp_time": 1.6328628318584075,
+            "stdev_resp_time": 0,
+            "avg_latency": 0.0,
+            "avg_conn_time": 0.0,
+            "byte_count": 176876220,
+            "errors": [],
+            "resp_codes": {
+            "200": 226
+            },
+            "percentiles": {
+            "0.0": 0.905,
+            "50.0": 1.577,
+            "90.0": 2.151,
+            "95.0": 2.275,
+            "99.0": 2.487,
+            "99.9": 9.879,
+            "100.0": 9.879
+            },
+            "plr": 0.0
+            }
+            }
+            ];
+
+            var data = [];
+            var x_mark = "timestamp";
+            var y_marks = Object.keys(load_data[1].cumulative);
+            /*var tmp = y_marks[y_marks.length-1];
+            y_marks.pop();
+            y_marks.pop();
+            y_marks.pop();
+            y_marks.pop();
+            y_marks[y_marks.length-1] = tmp;*/
+            console.log(y_marks);
+            i = 4;
+            d = new Date;
+            for (j = 0; j < load_data.length; ++j) {
+                d.setTime(load_data[j].timestamp * 1000);
+                data.push({[x_mark]: d.toString(), [y_marks[i]]: load_data[j].cumulative[y_marks[i]].toFixed(3)});
+            }
+            draw_graph(x_mark, y_marks[i], data, 0);
+            while (data.length) {
+                data.pop();
+            }
+
+            function draw_graph(x_mark, y_mark, data, i) {
+                console.log(data);
+                var myChart = new dimple.chart(svg, data);
+                var boundy = 30 + 500*i;
+                myChart.setBounds(60, boundy, 900, 400)
+
+                myChart.addCategoryAxis("x", x_mark);
+                myChart.addCategoryAxis("y", y_mark);
+                myChart.addSeries("Timeline of " + y_mark, dimple.plot.line);
+
+                myChart.draw();
+            }
+          </script>
+        </div>
+		<script>
+			var example = document.getElementById("example"),
+			    ctx = example.getContext('2d'),
+                cellSize = 32,
+                pic = new Image(),
+                map = [
+                    [{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4}],
+                    [{x:1,y:4},{x:1,y:1},{x:2,y:1},{x:3,y:1},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4}],
+                    [{x:1,y:4},{x:1,y:2},{x:2,y:2},{x:3,y:2},{x:1,y:4},{x:1,y:3},{x:1,y:3},{x:1,y:3}],
+                    [{x:1,y:4},{x:3,y:4},{x:2,y:3},{x:3,y:4},{x:1,y:4},{x:1,y:3},{x:1,y:4},{x:1,y:4}],
+                    [{x:1,y:4},{x:3,y:4},{x:2,y:4},{x:3,y:4},{x:1,y:4},{x:1,y:3},{x:1,y:4},{x:1,y:4}],
+                    [{x:1,y:4},{x:1,y:4},{x:1,y:3},{x:1,y:4},{x:1,y:4},{x:1,y:3},{x:1,y:4},{x:1,y:4}],
+                    [{x:1,y:4},{x:1,y:4},{x:1,y:3},{x:1,y:3},{x:1,y:3},{x:1,y:3},{x:1,y:4},{x:1,y:4}],
+                    [{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4},{x:1,y:4}]
+                ];
+
+            example.width  = 8 * cellSize;
+            example.height = 8 * cellSize;
+            pic.src = '1.png';
+            pic.onload = function() {
+                for (var j = 0 ; j < 8; j ++)
+                    for (var i = 0; i < 8; i ++)
+                        ctx.drawImage(pic, (map[i][j].x-1)*cellSize, (map[i][j].y-1)*cellSize, 32, 32, j*cellSize, i*cellSize, 32, 32);
+            }
+		</script>
+	</body>
+</html>
