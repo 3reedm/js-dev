@@ -4892,7 +4892,7 @@
             ];
 
             var data = [];
-            var x_mark = "timestamp";
+            var x_mark = "time";
             var y_marks = Object.keys(load_data[1].cumulative);
             /*var tmp = y_marks[y_marks.length-1];
             y_marks.pop();
@@ -4901,11 +4901,21 @@
             y_marks.pop();
             y_marks[y_marks.length-1] = tmp;*/
             console.log(y_marks);
-            i = 4;
+            i = 1;
             d = new Date;
+            var cur_time, cur_date;
             for (j = 0; j < load_data.length; ++j) {
                 d.setTime(load_data[j].timestamp * 1000);
-                data.push({[x_mark]: d.toString(), [y_marks[i]]: load_data[j].cumulative[y_marks[i]].toFixed(3)});
+
+                if (!cur_date) {
+                    temp_date = d.toTimeString().split(" ");
+                    cur_time = temp_date[1];
+                    cur_date = d.toDateString() + " " + temp_date[1] + " " + temp_date[2];
+                }
+                else {
+                    cur_time = d.toTimeString().split(" ")[0]
+                }
+                data.push({[x_mark]: cur_time, [y_marks[i]]: load_data[j].cumulative[y_marks[i]].toFixed(3)});
             }
             draw_graph(x_mark, y_marks[i], data, 0);
             while (data.length) {
@@ -4920,7 +4930,10 @@
 
                 myChart.addCategoryAxis("x", x_mark);
                 myChart.addCategoryAxis("y", y_mark);
-                myChart.addSeries("Timeline of " + y_mark, dimple.plot.line);
+
+                var legendStr = "Timeline of " + y_mark + " (" + cur_date + ")";
+                myChart.addSeries(legendStr, dimple.plot.line);
+                myChart.addLegend(60, 10, 510, 20, "right");
 
                 myChart.draw();
             }
